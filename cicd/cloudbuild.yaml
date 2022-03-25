@@ -14,7 +14,7 @@ steps:
   - |
     gcloud beta deploy \
     releases create rev-${SHORT_SHA} \
-    --delivery-pipeline=hipster \
+    --delivery-pipeline= ${_PIPELINE}\
     --labels=version=${SHORT_SHA} \
     --region ${_LOCATION} \
     --build-artifacts tags.json
@@ -25,4 +25,5 @@ timeout: '3600s'
 options:
   machineType: 'N1_HIGHCPU_8'
 substitutions:
-  _LOCATION: asia-east1%
+  _LOCATION: 'asia-east1'
+  _PIPELINE: 'hello-demo'
