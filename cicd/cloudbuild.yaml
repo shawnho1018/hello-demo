@@ -14,7 +14,7 @@ steps:
   - |
     gcloud beta deploy \
     releases create rev-${SHORT_SHA} \
-    --delivery-pipeline=${_PIPELINE}\
+    --delivery-pipeline=${_PIPELINE} \
     --labels=version=${SHORT_SHA} \
     --region ${_LOCATION} \
     --build-artifacts tags.json
