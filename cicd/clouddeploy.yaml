@@ -1,0 +1,37 @@
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: DeliveryPipeline
+metadata:
+  name: hello-demo
+description: Software Delivery Workshop Sample
+serialPipeline:
+  stages:
+  - targetId: uat-ns
+    profiles:
+    - uat
+  - targetId: prod-ns
+    profiles:
+    - prod
+---
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: uat-ns
+description: development namespace
+gke:
+ cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
+---
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: prod-ns
+description: production namespace
+gke:
+ cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
+---
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: prod-aa
+description: production active-active
+gke:
+ cluster: projects/shawn-demo-2022/locations/asia-southeast1-a/clusters/production
