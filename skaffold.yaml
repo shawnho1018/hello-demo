@@ -13,9 +13,9 @@ build:
   - context: src/
     image: asia-east1-docker.pkg.dev/shawn-demo-2022/image-repos/hello-demo
 deploy:
-  kubectl:
-    manifests:
-    - kubernetes-manifests/**
+  kustomize:
+    paths:
+    - kubernetes-manifests/uat
 profiles:
 - name: uat
   deploy:
