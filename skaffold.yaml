@@ -7,7 +7,7 @@ build:
     sha256: {}
   googleCloudBuild:
     diskSizeGb: 100
-    machineType: N1_HIGHCPU_32
+    machineType: N1_HIGHCPU_8
     timeout: 900s
   artifacts:
   - context: src/
@@ -23,9 +23,9 @@ profiles:
       paths:
       - kubernetes-manifests/uat
     kubeContext: gke_shawn-demo-2022_asia-east1-a_production
-- name: prod
+- name: production
   deploy:
     kustomize:
       paths:
-      - kubernetes-manifests/prod
+      - kubernetes-manifests/production
     kubeContext: gke_shawn-demo-2022_asia-east1-a_production

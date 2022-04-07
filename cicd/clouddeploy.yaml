@@ -10,28 +10,28 @@ serialPipeline:
     - uat
   - targetId: prod-ns
     profiles:
-    - prod
+    - production
 ---
 apiVersion: deploy.cloud.google.com/v1beta1
 kind: Target
 metadata:
- name: uat-ns
+  name: uat-ns
 description: development namespace
 gke:
- cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
+  cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
 ---
 apiVersion: deploy.cloud.google.com/v1beta1
 kind: Target
 metadata:
- name: prod-ns
+  name: prod-ns
 description: production namespace
 gke:
- cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
+  cluster: projects/shawn-demo-2022/locations/asia-east1-a/clusters/production
 ---
 apiVersion: deploy.cloud.google.com/v1beta1
 kind: Target
 metadata:
- name: prod-aa
+  name: prod-aa
 description: production active-active
 gke:
- cluster: projects/shawn-demo-2022/locations/asia-southeast1-a/clusters/production
+  cluster: projects/shawn-demo-2022/locations/asia-southeast1-a/clusters/production

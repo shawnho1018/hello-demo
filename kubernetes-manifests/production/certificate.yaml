@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hello-demo
+spec:
+  # The secret name to store the signed certificate
+  secretName: hello-demo-cert-tls
+  # Common Name
+  commonName: hello-demo.shawnk8s.com
+  # DNS SAN
+  dnsNames:
+    - shawnk8s.com
+  # Duration of the certificate
+  duration: 8760h
+  # Renew 8 hours before the certificate expiration
+  renewBefore: 24h
+  # Important: Ensure the issuerRef is set to the issuer or cluster issuer configured earlier
+  issuerRef:
+    group: cas-issuer.jetstack.io
+    kind: GoogleCASIssuer # or GoogleCASIssuer
+    name: googlecasissuer-sample

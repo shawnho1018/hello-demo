@@ -8,7 +8,8 @@
       "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
       "watch": true,
       "cleanUp": true,
-      "portForward": true
+      "portForward": true,
+      "imageRegistry": "asia-east1-docker.pkg.dev/shawn-demo-2022/image-repos"
     },
     {
       "type": "go",

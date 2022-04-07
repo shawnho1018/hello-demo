@@ -6,34 +6,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: go-hello-world
+  name: go-hello-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: go-hello-world
+      app: go-hello-demo
   template:
     metadata:
       labels:
-        app: go-hello-world
+        app: go-hello-demo
     spec:
       containers:
       - name: server
-        image: go-hello-world
+        image: asia-east1-docker.pkg.dev/shawn-demo-2022/image-repos/hello-demo
         resources:
           requests:
-            memory: 100Mi
-            cpu: 100m
-          limits:
             memory: 200Mi
             cpu: 200m
+          limits:
+            memory: 500Mi
+            cpu: 500m
         ports:
         - containerPort: 8080
         env:
         - name: PORT
           value: "8080"
-        securityContext:
-          runAsNonRoot: true
+        livenessProbe:
+          tcpSocket:
+            port: 8080
         readinessProbe:
           tcpSocket:
             port: 8080

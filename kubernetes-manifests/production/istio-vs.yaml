@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: frontend-ingress
+spec:
+  hosts:
+  - "hello-demo.shawnk8s.com"
+  gateways:
+  - gateway/hello-demo-gateway
+  http:
+  - route:
+    - destination:
+        host: go-hello-demo-external
+        port:
+          number: 80

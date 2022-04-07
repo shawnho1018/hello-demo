@@ -1,5 +1,11 @@
-namespace: prod
+namespace: production
 commonLabels:
-  env: prod
+  env: production
+  istio.io/rev: asm-managed
+resources:
+- certificate.yaml
+- istio-vs.yaml
+patches:
+- service-type.yaml
 bases:
 - ../base
