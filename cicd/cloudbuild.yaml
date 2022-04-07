@@ -20,7 +20,7 @@ steps:
     --region ${_LOCATION} \
     --build-artifacts tags.json \
     else \
-      echo "tags.json does not exist."
+      echo "tags.json does not exist." \
     fi 
   waitFor:
     - buildImage
