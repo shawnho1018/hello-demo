@@ -12,7 +12,7 @@ steps:
   args:
   - '-c'
   - |
-    if [ ! -f tags.json ]; then echo "tags.json does not exist!" \
+    if [ ! -f tags.json ]; then echo "tags.json does not exist!" fi;\
     gcloud beta deploy \
     releases create rev-${SHORT_SHA} \
     --delivery-pipeline=${_PIPELINE} \
