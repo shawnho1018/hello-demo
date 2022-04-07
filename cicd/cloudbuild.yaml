@@ -12,16 +12,13 @@ steps:
   args:
   - '-c'
   - |
-    if [ -f tags.json ]; then \
+    if [ ! -f tags.json ]; then echo "tags.json does not exist!" \
     gcloud beta deploy \
     releases create rev-${SHORT_SHA} \
     --delivery-pipeline=${_PIPELINE} \
     --labels=version=${SHORT_SHA} \
     --region ${_LOCATION} \
-    --build-artifacts tags.json \
-    else \
-      echo "tags.json does not exist." \
-    fi 
+    --build-artifacts tags.json
   waitFor:
     - buildImage
 # Add more power, and more time, for heavy Skaffold build
