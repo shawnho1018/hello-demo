@@ -19,6 +19,8 @@ steps:
       --labels=version=${SHORT_SHA}
       --region ${_LOCATION}
       --build-artifacts tags.json
+    else 
+      echo "tags.json does not exist"
     fi
   waitFor:
     - buildImage
