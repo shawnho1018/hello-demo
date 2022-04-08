@@ -3,11 +3,14 @@ kind: NetworkPolicy
 metadata:
   name: http-server
 spec:
-  podSelector: {}
+  podSelector:
+    matchLabels:
+      app: go-hello-demo
   policyTypes:
     - Ingress
     - Egress
   ingress: 
-  - {}
+  - ports: 
+    - port: 8080
   egress:
   - {}
