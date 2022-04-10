@@ -6,6 +6,13 @@ steps:
   - '-c'
   - |
     skaffold build --file-output tags.json
+- id: 'Deploy Istio Gateway and Certificate'
+  name: gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run 
+  - --filename=kubernetes-manifests/gateway/
+  - --location=asia-east1-a
+  - --cluster=production
 - id: 'cloudDeploy'
   name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: sh

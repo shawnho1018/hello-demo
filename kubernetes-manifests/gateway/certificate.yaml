@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: hello-demo
+  namespace: gateway
 spec:
   # The secret name to store the signed certificate
   secretName: hello-demo-cert-tls
@@ -17,5 +18,5 @@ spec:
   # Important: Ensure the issuerRef is set to the issuer or cluster issuer configured earlier
   issuerRef:
     group: cas-issuer.jetstack.io
-    kind: GoogleCASIssuer # or GoogleCASIssuer
-    name: googlecasissuer-sample
+    kind: GoogleCASClusterIssuer # or GoogleCASIssuer
+    name: cas-cluster-issuer
