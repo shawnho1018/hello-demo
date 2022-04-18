@@ -1,13 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: hello-demo
-  namespace: gateway
+  name: hello-uat
 spec:
   # The secret name to store the signed certificate
-  secretName: hello-demo-cert-tls
+  secretName: hello-uat-cert-tls
   # Common Name
-  commonName: hello-demo.shawnk8s.com
+  commonName: hello-uat.shawnk8s.com
   # DNS SAN
   dnsNames:
     - shawnk8s.com

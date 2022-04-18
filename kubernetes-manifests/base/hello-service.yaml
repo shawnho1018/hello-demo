@@ -8,7 +8,7 @@ kind: Service
 metadata:
   name: go-hello-demo-external
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: go-hello-demo
   ports:

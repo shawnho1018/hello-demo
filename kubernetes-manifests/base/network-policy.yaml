@@ -8,9 +8,6 @@ spec:
       app: go-hello-demo
   policyTypes:
     - Ingress
-    - Egress
   ingress: 
   - ports: 
     - port: 8080
-  egress:
-  - {}

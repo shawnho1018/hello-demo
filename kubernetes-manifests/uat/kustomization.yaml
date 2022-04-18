@@ -1,5 +1,8 @@
 namespace: uat
 commonLabels:
   env: uat
+resources:
+- certificate.yaml
+- ingress.yaml
 bases:
 - ../base

@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-ingress
+spec:
+  tls:
+  - hosts:
+    - hello-uat.shawnk8s.com
+    secretName: hello-uat-cert-tls
+  rules:
+    - host: hello-uat.shawnk8s.com
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: go-hello-demo-external
+              servicePort: 80
