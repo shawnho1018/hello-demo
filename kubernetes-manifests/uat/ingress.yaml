@@ -13,9 +13,9 @@ spec:
   rules:
   - host: hello-uat.shawnk8s.com
     http:
-      paths:
+      paths:    
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
           backend:
             service: 
               name: go-hello-demo-external
