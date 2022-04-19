@@ -3,6 +3,7 @@ commonLabels:
   env: uat
 resources:
 - certificate.yaml
+- frontendconfig.yaml
 - ingress.yaml
 bases:
 - ../base
