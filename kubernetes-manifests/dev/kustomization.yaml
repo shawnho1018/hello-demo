@@ -1,0 +1,7 @@
+namespace: dev
+commonLabels:
+  env: dev
+patches:
+- service-type.yaml
+bases:
+- ../base

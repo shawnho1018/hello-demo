@@ -4,7 +4,5 @@ commonLabels:
   istio.io/rev: asm-managed
 resources:
 - istio-vs.yaml
-patches:
-- service-type.yaml
 bases:
 - ../base

@@ -15,8 +15,15 @@ build:
 deploy:
   kustomize:
     paths:
-    - kubernetes-manifests/uat
+    - kubernetes-manifests/dev
+  kubeContext: gke_shawn-demo-2022_asia-east1-a_production
 profiles:
+- name: dev
+  deploy:
+    kustomize:
+      paths:
+      - kubernetes-manifests/dev
+    kubeContext: gke_shawn-demo-2022_asia-east1-a_production
 - name: uat
   deploy:
     kustomize:
