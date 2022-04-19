@@ -10,7 +10,7 @@ spec:
   commonName: hello-demo.shawnk8s.com
   # DNS SAN
   dnsNames:
-    - shawnk8s.com
+    - hello-demo.shawnk8s.com
   # Duration of the certificate
   duration: 8760h
   # Renew 8 hours before the certificate expiration

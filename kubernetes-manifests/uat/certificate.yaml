@@ -7,9 +7,10 @@ spec:
   secretName: hello-uat-cert-tls
   # Common Name
   commonName: hello-uat.shawnk8s.com
+  isCA: false
   # DNS SAN
   dnsNames:
-    - shawnk8s.com
+    - hello-uat.shawnk8s.com
   # Duration of the certificate
   duration: 8760h
   # Renew 8 hours before the certificate expiration

@@ -4,7 +4,8 @@ metadata:
   name: frontend-ingress
 spec:
   hosts:
-  - "hello-demo.shawnk8s.com" # this is used by external-dns to extract DNS names
+  # this is used by external-dns to extract DNS names
+  - "hello-demo.shawnk8s.com" 
   gateways:
   - gateway/hello-demo-gateway
   http:

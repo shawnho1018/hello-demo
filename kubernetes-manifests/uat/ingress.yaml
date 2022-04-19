@@ -4,7 +4,7 @@ metadata:
   name: hello-ingress
   annotations:
     kubernetes.io/ingress.allow-http: "false"
-    networking.gke.io/v1beta1.FrontendConfig: "my-frontend-config" 
+#    networking.gke.io/v1beta1.FrontendConfig: "my-frontend-config" 
 spec:
   tls:
   - hosts:
