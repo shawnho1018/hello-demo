@@ -1,0 +1,8 @@
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: managed-cert-17
+spec:
+  domains:
+    - hello-dev.shawnk8s.com

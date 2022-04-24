@@ -1,6 +1,9 @@
 namespace: dev
 commonLabels:
   env: dev
+resources:
+  - certificate.yaml
+  - ingress.yaml
 patches:
 - service-type.yaml
 bases:

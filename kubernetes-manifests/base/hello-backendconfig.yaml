@@ -1,0 +1,11 @@
+# my-backendconfig.yaml
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: hello-backendconfig
+spec:
+  timeoutSec: 40
+  connectionDraining:
+    drainingTimeoutSec: 60
+  securityPolicy:
+    name: "hello-security-policy"

@@ -3,15 +3,11 @@ kind: Ingress
 metadata:
   name: hello-ingress
   annotations:
-    kubernetes.io/ingress.allow-http: "false"
-    networking.gke.io/v1beta1.FrontendConfig: "my-frontend-config" 
+    kubernetes.io/ingress.global-static-ip-name: hello-address
+    networking.gke.io/managed-certificates: managed-cert-17
 spec:
-  tls:
-  - hosts:
-    - hello-uat.shawnk8s.com
-    secretName: hello-uat-cert-tls
   rules:
-  - host: hello-uat.shawnk8s.com
+  - host: hello-dev.shawnk8s.com
     http:
       paths:    
         - path: /

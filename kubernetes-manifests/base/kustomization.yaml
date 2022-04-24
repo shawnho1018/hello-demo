@@ -2,3 +2,4 @@ resources:
 - hello-deployment.yaml
 - hello-service.yaml
 - network-policy.yaml
+- hello-backendconfig.yaml
