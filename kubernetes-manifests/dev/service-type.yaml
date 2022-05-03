@@ -3,4 +3,4 @@ kind: "Service"
 metadata:
   name: go-hello-demo-external
 spec:
-  type: NodePort
+  type: LoadBalancer
